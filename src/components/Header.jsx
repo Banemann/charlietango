@@ -2,21 +2,21 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <header>
-      <nav>
-        <ul>
+    <header className="bg-blue-500 text-white shadow-md">
+      <nav className="container mx-auto flex justify-between p-5">
+        <ul className="flex space-x-4">
           <li>
-            <Link href="/">
+            <Link className="hover:underline" href="/">
               Home
             </Link>
           </li>
           <li>
-            <Link href="/rules">
+            <Link className="hover:underline" href="/rules">
               Rules
             </Link>
           </li>
           <li>
-            <Link href="report">
+            <Link className="hover:underline" href="/report">
               Report
             </Link>
           </li>

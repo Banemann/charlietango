@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 
+
 export const metadata = {
   title: "Home",
   description: "Home page",

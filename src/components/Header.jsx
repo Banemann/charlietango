@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -6,8 +7,8 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between p-5">
         <ul className="flex space-x-4">
           <li>
-            <Link prefetch={false} className="hover:underline" href="/">
-              Home
+            <Link prefetch={false} href="/">
+              <Image src="/diversa.svg" alt="Logo" className="h-8 w-auto" width={100} height={100} />
             </Link>
           </li>
           <li>

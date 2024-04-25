@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gray-100">
       <Header/>
 
-      <main className="container mx-auto p-4">
+      <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4 text-black">Diversa</h1>
 
         <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -26,7 +26,7 @@ export default function Home() {
           </button>
         </form>
 
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

@@ -8,16 +8,16 @@ const Header = () => {
         <ul className="flex space-x-4">
           <li>
             <Link prefetch={false} href="/">
-              <Image src="/diversa.svg" alt="Logo" className="h-8 w-auto" width={100} height={100} />
+              <Image src="/diversa.svg" alt="Logo" className="h-8 w-auto" width={100} height={100} priority />
             </Link>
           </li>
           <li>
-            <Link prefetch={false} className="hover:underline" href="/rules">
+            <Link prefetch={false} className="hover:underline" href="@./rules">
               Rules
             </Link>
           </li>
           <li>
-            <Link prefetch={false} className="hover:underline" href="/report">
+            <Link prefetch={false} className="hover:underline" href="@/report">
               Report
             </Link>
           </li>

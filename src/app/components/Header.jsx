@@ -1,23 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
+import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <main className="bg-blue-500 text-white shadow-md">
-      <nav className="container mx-auto flex justify-between p-5">
-        <ul className="flex space-x-4">
-          <li>
+    <main className={styles.header}>
+      <nav className={styles.nav}>
+        <ul className={styles.navList}>
+          <li className={styles.link}>
             <Link prefetch={false} href="/">
-              <Image src="/diversa.svg" alt="Logo" className="h-8 w-auto" width={100} height={100} priority />
+              <Image src="/diversa.svg" alt="Logo" className={styles.logo} width={100} height={100} priority />
             </Link>
           </li>
-          <li>
-            <Link prefetch={false} className="hover:underline" href="/rules">
+          <li className={styles.link}>
+            <Link prefetch={false} className={styles.link} href="/rules">
               Rules
             </Link>
           </li>
-          <li>
-            <Link prefetch={false} className="hover:underline" href="/report">
+          <li className={styles.link}>
+            <Link prefetch={false} className={styles.link} href="/report">
               Report
             </Link>
           </li>

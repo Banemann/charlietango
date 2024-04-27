@@ -1,0 +1,32 @@
+.header {
+    background-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .nav {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .navList {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .logo {
+    height: 32px;
+    width: auto;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+
+.link {
+    list-style: none;
+  }

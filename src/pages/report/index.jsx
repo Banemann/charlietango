@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-
+import Header from "../../app/components/Header";
 
 export async function getServerSideProps(context) {
   const params = new URLSearchParams(context.query);
@@ -15,8 +15,9 @@ export async function getServerSideProps(context) {
 
 export default function Report({ data }) {
   return (
-    <section>
+    <main>
+      <Header/>
       <h1>Report for {data.url}</h1>
-    </section>
+    </main>
   );
 }

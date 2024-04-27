@@ -12,7 +12,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link prefetch={false} className="hover:underline" href="@./rules">
+            <Link prefetch={false} className="hover:underline" href="/rules">
               Rules
             </Link>
           </li>

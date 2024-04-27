@@ -1,21 +1,22 @@
-export const revalidate = 1800;
+import { useRouter } from 'next/router';
 
 
-
-export default async function Report({ searchParams }) {
-  "use client";
-  const params = new URLSearchParams(searchParams);
+export async function getServerSideProps(context) {
+  const params = new URLSearchParams(context.query);
   const response = await fetch(
     `https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`,
   );
   const data = await response.json();
 
+  return {
+    props: { data }, // will be passed to the page component as props
+  };
+}
 
+export default function Report({ data }) {
   return (
-    
     <section>
-     
-      <h1>Report for {data.url}</h1>     
+      <h1>Report for {data.url}</h1>
     </section>
   );
 }

@@ -17,7 +17,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link prefetch={false} className="hover:underline" href="@/report">
+            <Link prefetch={false} className="hover:underline" href="/report">
               Report
             </Link>
           </li>

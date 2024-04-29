@@ -1,6 +1,6 @@
 import Header from "../../app/components/Header";
 import Image from "next/image";
-
+import styles from './Report.module.css'; // Assuming you are using CSS modules
 
 export const revalidate = 1800;
 
@@ -20,21 +20,34 @@ export default function Report({ data }) {
   const violations = data.violations.slice(0, 3);
 
   return (
-    <div>
+    <main>
       <Header />
-      <h1>Report for {data.url}</h1>
-      <Image src={data.screenshot.url} alt="Screenshot of the page" width={data.screenshot.width} height={data.screenshot.height} priority />
-      <p>Found {data.violations.length} issues</p>
-      <div>
+      <div className={styles.mainContainer}>
+      <h1>{data.url}</h1>
+      <div className={styles.imageContainer}>
+        <Image
+          src={data.screenshot.url}
+          alt="Screenshot of the page"
+          layout="fill"
+          objectFit="contain"
+          priority
+        />
+      </div>
+      <div className={styles.violationsCount}>
+        <p>Found {data.violations.length} issues</p>
+      </div>
+      <div className={styles.violationsContainer}>
         <h3>Violations:</h3>
         {violations.map((violation, index) => (
-          <div key={index}>
+          <article key={index}>
             <p><strong>ID:</strong> {violation.id}</p>
             <p><strong>Impact:</strong> {violation.impact}</p>
             <p><strong>Description:</strong> {violation.description}</p>
-          </div>
+          </article>
         ))}
       </div>
-    </div>
+      
+      </div>
+    </main>
   );
 }

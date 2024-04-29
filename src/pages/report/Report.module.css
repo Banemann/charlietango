@@ -1,0 +1,42 @@
+.imageContainer {
+    position: relative;
+    padding-bottom: 20%;
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    overflow: hidden; 
+  }
+  
+  .violationsCount {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+.mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .violationsContainer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  
+ 
+  
+
+  

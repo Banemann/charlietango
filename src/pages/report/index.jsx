@@ -1,6 +1,6 @@
 import Header from "../../app/components/Header";
 import Image from "next/image";
-import styles from './Report.module.css'; // Assuming you are using CSS modules
+import styles from './Report.module.css';
 
 export const revalidate = 1800;
 

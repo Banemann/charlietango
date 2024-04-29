@@ -1,5 +1,5 @@
-import Header from '@/components/Header';
-import Image from "next/image";
+import Header from "../../app/components/Header";
+
 
 
 

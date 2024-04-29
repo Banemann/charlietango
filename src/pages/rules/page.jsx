@@ -11,10 +11,15 @@ export const metadata = {
 
 export default function Rules() {
   return (
-    <main>
+    <main className="min-h-screen bg-gray-100">
       <Header/>
-      <h1>Reglerne er som følger</h1>
-      <p>DU MÅ IKKE</p>
-     </main>
+
+      <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4 text-black">Rules</h1>
+
+       
+
+      </div>
+    </main>
   );
 }

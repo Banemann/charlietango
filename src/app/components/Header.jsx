@@ -17,11 +17,6 @@ const Header = () => {
               Rules
             </Link>
           </li>
-          <li className={styles.link}>
-            <Link prefetch={false} className={styles.link} href="/report">
-              Report
-            </Link>
-          </li>
         </ul>
       </nav>
     </main>

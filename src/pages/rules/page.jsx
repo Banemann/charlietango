@@ -1,11 +1,6 @@
 import Header from '@/components/Header';
 import Image from "next/image";
 
-export const metadata = {
-  title: "Rules",
-  description: "Rules page",
-}
-
 
 
 

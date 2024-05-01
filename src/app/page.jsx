@@ -12,14 +12,12 @@ export default function Home() {
       <Header/>
 
       <div className={styles.contentContainer}>
-        <h1 className={`${styles.heading} ${styles.largeText}`}>Diversa</h1>
+        
 
         <form action="/report" className={styles.formContainer}>
           <div className={styles.inputGroup}>
-            <label className={styles.formLabel} htmlFor="url">
-              URL
-            </label>
-            <input className={styles.inputField} type="text" id="url" name="url" placeholder="Indtast URL" required></input>
+            <label className={styles.formLabel} htmlFor="url"/>
+            <input className={styles.inputField} type="text" id="url" name="url" placeholder="Enter URL" required></input>
           </div>
           <button className={styles.submitButton} type="submit">
             Check it

@@ -6,16 +6,23 @@ import Link from "next/link";
 export const revalidate = 1800;
 
 export async function getServerSideProps(context) {
+  // Create URLSearchParams from the existing query
   const params = new URLSearchParams(context.query);
-  const response = await fetch(
-    `https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`,
-  );
+
+  // Add default parameters or modify existing ones
+  // This ensures certain parameters are always set
+  params.set('tags', 'wcag21a,wcag21aa,best-practice,ACT'); // This sets the 'tags' to always include these values
+
+  // Fetch data from the API using the modified parameters
+  const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
   const data = await response.json();
 
+  // Return the fetched data as props
   return {
     props: { data },
   };
 }
+
 
 export default function Report({ data }) {
   const violations = data.violations.slice(0, 3);

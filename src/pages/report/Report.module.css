@@ -2,11 +2,11 @@
 
 .imageContainer {
   position: relative;
-  padding-bottom: 20%;
-  width: 30%;
-  border: 1px solid #ccc;
+  padding-bottom: 2%;
   border-radius: 8px;
   overflow: hidden;
+  justify-content: left;
+  align-items: left;
 }
 
 .violationsCount {
@@ -26,6 +26,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .violationsContainer {
@@ -56,3 +58,28 @@
   display: block;
   transform: scale(1.2);
 }
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: 92% 8%;  
+}
+
+.scoreContainer {
+  background-color: #4CAF50; 
+  color: white; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-size: 22px;
+}
+
+.scoreContainer.low { 
+  background-color: yellow;
+  color: black;
+}
+
+.scoreContainer.critical {
+  background-color: red;
+}
+

@@ -1,42 +1,37 @@
 import Header from "../../app/components/Header";
 import Image from "next/image";
 import styles from './Report.module.css';
-import Back from "../../app/components/Back";
+import Link from 'next/link';
 
 export const revalidate = 1800;
 
 export async function getServerSideProps(context) {
-  // Create URLSearchParams from the existing query
   const params = new URLSearchParams(context.query);
-
-  // Add default parameters or modify existing ones
-  // This ensures certain parameters are always set
-  params.set('tags', 'wcag21a,wcag21aa,best-practice,ACT'); // This sets the 'tags' to always include these values
-
-  // Fetch data from the API using the modified parameters
-  const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
-  const data = await response.json();
-
-  // Return the fetched data as props
-  return {
-    props: { data },
-  };
+  params.set('tags', 'wcag21a,wcag21aa,best-practice,ACT');
+  
+  try {
+    const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
+    const data = await response.json();
+    return { props: { data } };
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
+    return { props: { data: null, error: 'Failed to fetch data.' } };
+  }
 }
 
 
+
 function calculateGrade(violationsCount) {
-  // Define the grades from best to worst
   const grades = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-  // Calculate index based on every two violations
   const index = Math.floor(violationsCount / 2);
 
-  // Ensure the index does not exceed the last available grade
+  
   if (index >= grades.length) {
-    return 'F'; // Return the lowest grade if violations exceed the grades array
+    return 'F'; 
   }
 
-  return grades[index]; // Return the grade corresponding to the calculated index
+  return grades[index];
 }
 
 
@@ -56,7 +51,6 @@ export default function Report({ data }) {
   return (
     <main>
       <Header />
-     <Back/>
       <div className={styles.mainContainer}>
         <div className={styles.infoContainer}>
           <h1>{data.url}</h1>
@@ -68,25 +62,32 @@ export default function Report({ data }) {
           <Image
             src={data.screenshot.url}
             alt="Screenshot of the page"
-            width="720"
-            height="405"
+            width={1200}
+            height={data.screenshot.height * 1200 / data.screenshot.width}
             priority
           />
         </div>
         <div className={styles.violationsCount}>
-          <p>Found {data.violations.length} issues</p>
+          <p>Found {data.violations.length} violations</p>
         </div>
         <div className={styles.violationsContainer}>
-          <h3>Violations:</h3>
           {violations.map((violation, index) => (
-            <article key={index}>
+           <Link target="_blank" rel="noopener noreferrer" key={index} href={`/rules/${violation.id}`}> 
+           <article key={index} className={styles.violationCard}>
               <p><strong>ID:</strong> {violation.id}</p>
               <p><strong>Impact:</strong> {violation.impact}</p>
               <p><strong>Description:</strong> {violation.description}</p>
             </article>
+            </Link>
           ))}
         </div>
       </div>
     </main>
   );
 }
+
+
+            
+               
+          
+      

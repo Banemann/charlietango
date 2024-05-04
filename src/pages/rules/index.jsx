@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from "../../app/components/Header";
+import styles from "./Rules.module.css";
 
 const rulesData = [
   { id: 'area-alt' },
@@ -72,18 +73,22 @@ function formatDisplayName(id) {
 
 export default function RulesOverview() {
   return (
-    <main>
+    <main className={styles.main}>
       <Header/>
       <h1>Axe Accessibility Rules</h1>
-      <ul>
+      <div>
+      <ul className={styles.cardContainer}>
         {rulesData.map(rule => (
           <li key={rule.id}>
             <Link href={`/rules/${rule.id}`}>
-              {formatDisplayName(rule.id)}
+              <div className={styles.card}>
+                {formatDisplayName(rule.id)}
+              </div>
             </Link>
           </li>
         ))}
       </ul>
+      </div>
     </main>
   );
 }

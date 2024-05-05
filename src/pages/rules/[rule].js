@@ -1,6 +1,6 @@
-import Header from "../../app/components/Header";
 import Back from "../../app/components/Back";
 import { useRouter } from 'next/router';
+import styles from "./Rules.module.css";
 
 const RuleSingles = {
   'area-alt': {
@@ -31,6 +31,7 @@ const RuleSingle = () => {
   return (
     <main>
         <Back/>
+      <div className={styles.singleContainer}>
       <h2>{detail.id}</h2>
       <h3>Description</h3>
       <p>{detail.description}</p>
@@ -38,6 +39,7 @@ const RuleSingle = () => {
       <p>{detail.impact}</p>
         <h3>Issue Type</h3>
       <p>{detail.issueType}</p>
+      </div>
     </main>
   );
 };

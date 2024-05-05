@@ -74,24 +74,21 @@
   background-color: #2b6cb0;
 }
 
-
-
-.scoreContainer {
-  background-color: #4CAF50; 
-  color: white; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  padding: 2%;
+.title{
+  color: #4a5568;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-#scoreBox{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+.description {
+  color: #4a5568;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1rem;
+}
+
+.infoContainer {
+  margin: 2rem 0;
+  text-align: center;
 }

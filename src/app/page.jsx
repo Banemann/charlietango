@@ -11,8 +11,15 @@ export default function Home() {
     <main className={styles.fullHeight}>
       <Header/>
 
+      
+
       <div className={styles.contentContainer}>
-        
+        <div className={styles.infoContainer}>
+        <h1 className={styles.title}>Accessibility Checker</h1>
+        <p className={styles.description}>
+          Enter a URL to check the websites accessibility
+        </p>
+      </div>
 
         <form action="/report" className={styles.formContainer}>
           <div className={styles.inputGroup}>
@@ -23,27 +30,6 @@ export default function Home() {
             Check it
           </button>
         </form>
-
-        <div id={styles.scoreBox}>
-        <div className={styles.scoreContainer}>
-            <h2>A</h2>
-          </div>
-        <div className={styles.scoreContainer}>
-            <h2>B</h2>
-          </div>
-        <div className={styles.scoreContainer}>
-            <h2>C</h2>
-          </div>
-        <div className={styles.scoreContainer}>
-            <h2>D</h2>
-          </div>
-        <div className={styles.scoreContainer}>
-            <h2>E</h2>
-          </div>
-        <div className={styles.scoreContainer}>
-            <h2>F</h2>
-          </div>
-        </div>
       </div>
     </main>
   );
